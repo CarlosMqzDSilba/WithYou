@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{60602C6C-0C18-49F6-8FCF-69C1F580064B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{A79552CF-7BA6-4A3B-BABA-635CE7460E8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithYou.Web", "WithYou.Web\WithYou.Web.csproj", "{A95EFAF5-8B7F-4158-8BB8-E9BFC779322F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A95EFAF5-8B7F-4158-8BB8-E9BFC779322F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A95EFAF5-8B7F-4158-8BB8-E9BFC779322F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A95EFAF5-8B7F-4158-8BB8-E9BFC779322F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A95EFAF5-8B7F-4158-8BB8-E9BFC779322F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A95EFAF5-8B7F-4158-8BB8-E9BFC779322F} = {60602C6C-0C18-49F6-8FCF-69C1F580064B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B26C8C7-0F0B-408C-8665-34AC9CB569D1}
+	EndGlobalSection
+EndGlobal
