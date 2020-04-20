@@ -12,5 +12,6 @@ namespace WithYou.Web.Data.Entities
         public DateTime BirthDay { get; set; }
         public string ImageUrl { get; set; }
         public string FullName => $"{LastName} {FirstName}";
+        public Gender Gender { get; set; }
     }
 }
