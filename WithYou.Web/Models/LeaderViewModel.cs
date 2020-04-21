@@ -10,5 +10,6 @@ namespace WithYou.Web.Models
         public IFormFile ImageFile { get; set; }
         public int GenderId { get; set; }
         public IEnumerable<SelectListItem> Genders { get; set; }
+       
     }
 }
