@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WithYou.Web.Data;
 using WithYou.Web.Data.Entities;
+using WithYou.Web.Models;
 
 namespace WithYou.Web.Controllers
 {

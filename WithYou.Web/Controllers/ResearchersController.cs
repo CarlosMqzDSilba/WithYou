@@ -1,22 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using WithYou.Web.Data;
 using WithYou.Web.Data.Entities;
+using WithYou.Web.Helpers;
+using WithYou.Web.Models;
 
 namespace WithYou.Web.Controllers
 {
     public class ResearchersController : Controller
     {
         private readonly DataContext dataContext;
+        private readonly ICombosHelper combosHelper;
+        private readonly ImagenHelper imagenHelper;
 
-        public ResearchersController(DataContext dataContext)
+        public ResearchersController(DataContext dataContext, ICombosHelper combosHelper, ImagenHelper imagenHelper)
         {
             this.dataContext = dataContext;
+            this.combosHelper = combosHelper;
+            this.imagenHelper = imagenHelper;
         }
 
 
@@ -27,7 +30,11 @@ namespace WithYou.Web.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var model = new ResearcherViewModel
+            {
+                Genders = combosHelper.GetComboGenders()
+            };
+            return View(model);
         }
 
         // POST: Researchers/Create

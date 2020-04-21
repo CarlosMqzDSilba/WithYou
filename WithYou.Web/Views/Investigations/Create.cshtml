@@ -1,4 +1,4 @@
-﻿@model WithYou.Web.Data.Entities.Investigation
+﻿@model WithYou.Web.Models.InvestigationViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -23,14 +23,14 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RepublicState" class="control-label"></label>
-                <input asp-for="RepublicState" class="form-control" />
-                <span asp-validation-for="RepublicState" class="text-danger"></span>
+                <label asp-for="RepublicStateId" class="control-label"></label>
+                <select asp-for="RepublicStateId" asp-items="Model.RepublicStates" class="form-control" ></select>
+                <span asp-validation-for="RepublicStateId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ProyectType" class="control-label"></label>
-                <input asp-for="ProyectType" class="form-control" />
-                <span asp-validation-for="ProyectType" class="text-danger"></span>
+                <label asp-for="ProyectTypeId" class="control-label"></label>
+                <select asp-for="ProyectTypeId"asp-items="Model.ProyectTypes" class="form-control" ></select>
+                <span asp-validation-for="ProyectTypeId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
