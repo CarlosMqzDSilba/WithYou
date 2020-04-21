@@ -15,7 +15,7 @@ namespace WithYou.Web.Helpers
         {
             this.dataContext = dataContext;
         }
-        public IEnumerable<SelectListItem> GetComboGenders()
+        public IEnumerable<SelectListItem> GetComboProyectTypes()
         {
             var list = dataContext.Genders.Select(c => new SelectListItem
             {
@@ -24,15 +24,10 @@ namespace WithYou.Web.Helpers
             }).ToList();
             list.Insert(0, new SelectListItem
             {
-                Text = "[Debe seleccionar un genero....]",
+                Text = "[Debe seleccionar una categoria....]",
                 Value = "0"
             });
             return list;
-        }
-
-        public IEnumerable<SelectListItem> GetComboProyectTypes()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

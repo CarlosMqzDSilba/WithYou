@@ -16,10 +16,10 @@ namespace WithYou.Web.Data.Entities
         public string Name { get; set; }
 
         [Required(ErrorMessage = "{0} es requerido")]
-        [MaxLength(100, ErrorMessage = "El campo {0} no puede tener más de {1} caractéres")]
-        [MinLength(20, ErrorMessage = "El campo {0} debe de contener una descripción")]
+        [MaxLength(150, ErrorMessage = "El campo {0} no puede tener más de {1} caractéres")]
         [Display(Name = "Descripción")]
         public string Description { get; set; }
+
         public RepublicState RepublicState { get; set; }
         public ProyectType ProyectType { get; set; }
     }

@@ -40,8 +40,10 @@ namespace WithYou.Web
             });
 
             services.AddScoped<ICombosHelper, CombosHelper>();
+            services.AddScoped<IImageHelper, ImagenHelper>();
             services.AddScoped<ITypesHelper, TypesHelper>();
             services.AddScoped<IStateHelper, StateHelper>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
