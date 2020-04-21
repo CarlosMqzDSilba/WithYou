@@ -8,7 +8,7 @@ namespace WithYou.Web.Data.Entities
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "{0} es requerido")]
+       [Required(ErrorMessage = "{0} es requerido")]
         [MaxLength(20, ErrorMessage = "El campo {0} no puede tener más de {1} caractéres")]
         [Display(Name = "Nombre")]
         public string FirstName { get; set; }
@@ -34,6 +34,7 @@ namespace WithYou.Web.Data.Entities
 
         [Display(Name = "Nombre")]
         public string FullName => $"{LastName} {FirstName}";
+        public User User { get; set; }
         public Gender Gender { get; set; }
     }
 }

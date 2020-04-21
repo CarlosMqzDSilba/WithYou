@@ -37,7 +37,28 @@ namespace WithYou.Web.Controllers
             };
             return View(model);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(InvestigationViewModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                var invastigation = new Investigation
+                {
+                    Name=model.Name,
+                    Description=model.Description,
+                    ProyectType=await dataContext.ProyectTypes.FirstOrDefaultAsync(m=>m.Id==model.ProyectTypeId),
+                    RepublicState = await dataContext.RepublicStates.FirstOrDefaultAsync(m => m.Id == model.RepublicStateId),
+                    
+                };
+                dataContext.Investigations.Add(invastigation);
+                await dataContext.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(model);
+        }
 
-        
+
+
     }
 }

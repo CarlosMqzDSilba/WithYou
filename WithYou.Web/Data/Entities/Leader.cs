@@ -33,6 +33,7 @@ namespace WithYou.Web.Data.Entities
 
         [Display(Name = "Nombre")]
         public string FullName => $"{LastName} {FirstName}";
+        public User User { get; set; }
         public Gender Gender { get; set; }
     }
 }
