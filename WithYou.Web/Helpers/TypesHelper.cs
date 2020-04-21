@@ -17,7 +17,7 @@ namespace WithYou.Web.Helpers
         }
         public IEnumerable<SelectListItem> GetComboProyectTypes()
         {
-            var list = dataContext.Genders.Select(c => new SelectListItem
+            var list = dataContext.ProyectTypes.Select(c => new SelectListItem
             {
                 Text = c.Name,
                 Value = $"{c.Id}"
