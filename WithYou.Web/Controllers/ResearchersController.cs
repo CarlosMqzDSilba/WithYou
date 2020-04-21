@@ -36,6 +36,27 @@ namespace WithYou.Web.Controllers
             };
             return View(model);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(ResearcherViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var research = new Researcher
+                {
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Enrollment = model.Enrollment,
+                    BirthDay = model.BirthDay,
+                    Gender = await dataContext.Genders.FirstOrDefaultAsync(m => m.Id == model.GenderId),
+                    ImageUrl = await imagenHelper.UploadImageAsync(model.ImageFile, model.Enrollment, "Students")
 
+                };
+                dataContext.Researchers.Add(research);
+                await dataContext.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(model);
+        }
     }
 }
