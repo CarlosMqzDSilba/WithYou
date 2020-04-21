@@ -6,21 +6,14 @@ using System.Threading.Tasks;
 
 namespace WithYou.Web.Data.Entities
 {
-    public class Investigation:IEntity
+    public class ProyectType : IEntity
     {
         public int Id { get; set; }
 
         [Required(ErrorMessage = "{0} es requerido")]
         [MaxLength(20, ErrorMessage = "El campo {0} no puede tener más de {1} caractéres")]
-        [Display(Name = "Nombre")]
+        [Display(Name = "Area")]
         public string Name { get; set; }
-
-        [Required(ErrorMessage = "{0} es requerido")]
-        [MaxLength(150, ErrorMessage = "El campo {0} no puede tener más de {1} caractéres")]
-        [Display(Name = "Descripción")]
-        public string Description { get; set; }
-
-        public RepublicState RepublicState { get; set; }
-        public ProyectType ProyectType { get; set; }
+        public ICollection<Investigation> Investigations { get; set; }
     }
 }
