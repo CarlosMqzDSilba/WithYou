@@ -12,14 +12,12 @@ namespace WithYou.Web.Controllers
     public class InvestigationsController : Controller
     {
         private readonly DataContext dataContext;
-        private readonly IStateHelper stateHelper;
-        private readonly ITypesHelper typesHelper;
+        private readonly ICombosHelper combosHelper;
 
-        public InvestigationsController(DataContext dataContext, IStateHelper stateHelper, ITypesHelper typesHelper)
+        public InvestigationsController(DataContext dataContext, ICombosHelper combosHelper)
         {
             this.dataContext = dataContext;
-            this.stateHelper = stateHelper;
-            this.typesHelper = typesHelper;
+            this.combosHelper = combosHelper;
         }
 
 
@@ -32,8 +30,8 @@ namespace WithYou.Web.Controllers
         {
             var model = new InvestigationViewModel
             {
-                RepublicStates = stateHelper.GetComboRepublicStates(),
-                ProyectTypes= typesHelper.GetComboProyectTypes()
+                RepublicStates = combosHelper.GetComboRepublicStates(),
+                ProyectTypes= combosHelper.GetComboProyectTypes()
             };
             return View(model);
         }

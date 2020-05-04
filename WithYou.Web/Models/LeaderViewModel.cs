@@ -5,11 +5,11 @@ using WithYou.Web.Data.Entities;
 
 namespace WithYou.Web.Models
 {
-    public class LeaderViewModel:Leader
+    public class LeaderViewModel : Leader
     {
         public IFormFile ImageFile { get; set; }
         public int GenderId { get; set; }
-        public IEnumerable<SelectListItem> Genders { get; set; }
+        public IEnumerable<SelectListItem> Genders { get; set; } 
        
     }
 }

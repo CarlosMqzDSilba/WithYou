@@ -39,10 +39,12 @@ namespace WithYou.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddScoped<ICombosHelper, CombosHelper>();
+            services.AddTransient<SeedDb>();
+            services.AddScoped<IUserHelper, UserHelper>();
             services.AddScoped<IImageHelper, ImagenHelper>();
-            services.AddScoped<ITypesHelper, TypesHelper>();
-            services.AddScoped<IStateHelper, StateHelper>();
+            services.AddScoped<ICombosHelper, CombosHelper>();
+            //services.AddScoped<ICombosHelper, CombosHelper>();
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

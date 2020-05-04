@@ -12,6 +12,8 @@ namespace WithYou.Web.Data
         public DbSet<Researcher> Researchers { get; set; }
         public DbSet<RepublicState> RepublicStates { get; set; }
         public DbSet<Leader> Leaders { get; set; }
+        public DbSet<Manager> Managers { get; set; }
+        public DbSet<SpecialtyClass> SpecialtyClasses { get; set; }
         public DataContext(DbContextOptions<DataContext> options):base(options)
         {
 

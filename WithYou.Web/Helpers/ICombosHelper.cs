@@ -6,5 +6,7 @@ namespace WithYou.Web.Helpers
     public interface ICombosHelper
     {
         IEnumerable<SelectListItem> GetComboGenders();
+        IEnumerable<SelectListItem> GetComboRepublicStates();
+        IEnumerable<SelectListItem> GetComboProyectTypes();
     }
 }

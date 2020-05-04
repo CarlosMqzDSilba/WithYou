@@ -27,5 +27,33 @@ namespace WithYou.Web.Helpers
             });
             return list;
         }
+        public IEnumerable<SelectListItem> GetComboProyectTypes()
+        {
+            var list = dataContext.ProyectTypes.Select(c => new SelectListItem
+            {
+                Text = c.Name,
+                Value = $"{c.Id}"
+            }).ToList();
+            list.Insert(0, new SelectListItem
+            {
+                Text = "[Debe seleccionar una categoria....]",
+                Value = "0"
+            });
+            return list;
+        }
+        public IEnumerable<SelectListItem> GetComboRepublicStates()
+        {
+            var list = dataContext.RepublicStates.Select(c => new SelectListItem
+            {
+                Text = c.Name,
+                Value = $"{c.Id}"
+            }).ToList();
+            list.Insert(0, new SelectListItem
+            {
+                Text = "[Debe seleccionar un estado....]",
+                Value = "0"
+            });
+            return list;
+        }
     }
 }
